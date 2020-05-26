@@ -1,0 +1,52 @@
+<html>
+<body>
+    <form action="{% url 'confirm' %}" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <th colspan="2">
+                    <h2>Sathya Tech</h2>
+                </th>
+            </tr>
+            <tr>
+                <th>Student Name</th>
+                <th>
+                    <input type="text" name="name" required>
+                </th>
+            </tr><tr>
+                <th>Contact No.</th>
+                <th>
+                    <input type="tel" name="cno" required>
+                </th>
+            </tr>
+            <tr>
+                <th>Select Course</th>
+                <th>
+                    <input type="checkbox" name="ch" value="python" checked>Python<br>
+                    <input type="checkbox" name="ch" value="django">Django<br>
+                    <input type="checkbox" name="ch" value="project">Project
+                </th>
+            </tr>
+            <tr>
+                <th>Class Type</th>
+                <th>
+                    <input type="radio" name="rd" value="online">Online<br>
+                    <input type="radio" name="rd" value="offline" checked>Offline
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" value="Save">Save</button>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    {% for i in messages %}
+                        <h3 style="color: darkgreen">{{ i }}</h3>
+                    {% endfor %}
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

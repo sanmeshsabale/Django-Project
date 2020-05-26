@@ -1,0 +1,73 @@
+<html>
+<body>
+<form action="{% url 'save' %}" method="post">
+{% csrf_token %}
+<div align="center">
+    <table align="center">
+        <tr>
+            <th colspan="2"><h2>Confirmation Details</h2><hr></th>
+        </tr>
+        <tr>
+            <th>
+                Name :
+            </th>
+            <th>
+                {{ name }}
+            </th>
+        </tr>
+        <tr>
+            <th>Contact : </th>
+            <th>{{ cno }}</th>
+        </tr>
+        <tr>
+            <th>Type : </th>
+            <th>{{ rd }}</th>
+        </tr>
+        <tr>
+            <th>Courses : </th>
+            <th>
+                {% for i in ch %}
+                    {{ i }}
+                {% endfor %}
+            </th>
+        </tr>
+        <tr><td colspan="2"><hr></td></tr>
+
+        {% for y in ch %}
+            {% if y == "python"  %}
+                <tr>
+                    <th>Python : </th>
+                    <th>15000</th>
+                </tr>
+
+            {% elif y == "django" or y == "python" %}
+                <tr>
+                    <th>Django : </th>
+                    <th>15000</th>
+                </tr>
+
+            {% elif y == "project" or y == "django" or y == "python"  %}
+                <tr>
+                    <th>Project : </th>
+                    <th>15000</th>
+                </tr>
+
+            {% endif %}
+        {% endfor %}
+
+        <tr><td colspan="2"><hr></td></tr>
+        <tr>
+            <th>Total :</th>
+            <th>{{ total }}</th>
+        </tr>
+        <tr><td colspan="2"><hr></td></tr>
+        <tr>
+            <th colspan="2">
+                <button type="submit">Save</button>
+            </th>
+        </tr>
+    </table>
+</div>
+</form>
+</body>
+</html>
