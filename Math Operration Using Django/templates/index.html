@@ -1,0 +1,27 @@
+
+<html>
+    <body>
+        <form>
+            {% csrf_token %}
+        First Number<input type="number" required name="fno" min="1" ><br><br>
+        Second Number<input type="number" required name="sno" min="1" ><br><br>
+        <button type="submit" formaction="/add/" formmethod="post" >ADD</button>
+        <button type="submit" formaction="/sub/" formmethod="post">SUB</button><br><br>
+        <button type="submit" formaction="/mul/" formmethod="post">MUL</button>
+        <button type="submit" formaction="/div/" formmethod="post">DIV</button><br><br>
+        </form>
+                <h1>Result</h1>
+        {% if add %}
+            <h2>{{ add }}</h2>
+        {% endif %}
+        {% if sub %}
+            <h2>{{ sub }}</h2>
+        {% endif %}
+        {% if mul %}
+            <h2>{{ mul }}</h2>
+        {% endif %}
+        {% if div %}
+            <h2>{{ div }}</h2>
+        {% endif %}
+    </body>
+</html>
