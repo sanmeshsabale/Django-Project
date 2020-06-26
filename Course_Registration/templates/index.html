@@ -1,0 +1,20 @@
+
+
+<html>
+    <body>
+    <form action="{% url 'confirm' %}" method="post">
+        {% csrf_token %}
+       <table align="center" border="2">
+           <tr><td>Student Name<input type="text" name="name"></td></tr>
+           <tr><td>Contact Number<input type="tel" name="cno"></td></tr>
+           <tr><td> Select Course <input type="checkbox" name="s1" value="Python">Python</td>
+           <tr><td><input type="checkbox" name="s1" value="Django">Django</td></tr>
+           <tr><td><input type="checkbox" name="s1" value="Project">Project</td></tr>
+           <tr><td>Class Type<input type="radio" name="c1" value="Online" checked>Online</td></tr>
+           <tr><td><input type="radio" name="c1" value="Offline">Offline</td></tr>
+           <tr><th><button type="submit">Save</button></th></tr>
+       </table>
+    </form>
+
+    </body>
+</html>

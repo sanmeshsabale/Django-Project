@@ -1,0 +1,29 @@
+
+
+<html>
+    <body>
+        <form action="{% url 'save' %}" method="post">
+            {% csrf_token %}
+
+        <table align="center" border="2">
+        <h1 align="center">Fees Structure</h1>
+            <tr><td>NAME:{{ name }}</td></tr>
+            <tr><td>CONTACT NO.:{{ cno}}</td></tr>
+            <tr><td>CLASS TYPE:{{ rd}}</td></tr>
+            <tr><th>Courses : </th>
+            {% for y in ch %}
+            {% if y == "Python"  %}
+                <tr><td>Python :5000 </td></tr>
+            {% elif y == "Django" or y == "Python" %}
+                <tr><td>Django :10000</td></tr>
+            {% elif y == "Project" or y == "Django" or y == "Python"  %}
+                <tr><td>Project :15000 </td></tr>
+            {% endif %}
+        {% endfor %}
+            <tr><td>Total Amount:{{ total }}</td></tr>
+        <tr><th><button type="submit">SAVE</button></th></tr>
+        </table>
+        </form>
+        <th>{{mess}}</th>
+    </body>
+</html>
