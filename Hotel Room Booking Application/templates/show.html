@@ -1,0 +1,32 @@
+
+
+<html>
+    <body>
+        <table align="center" border="0">
+            <tr><td>NAME:{{ name }}</td></tr>
+            <tr><td>CONTACT NO:{{ contact }}</td></tr>
+            <tr><td>ADDRESS:{{ address }}</td></tr><br><br><br><br>
+            <tr><td colspan="6"><hr></td></tr>
+            <tr><td style="font-size: 20px">Payment Details:</td></tr>
+            <tr><td colspan="6"><hr></td></tr>
+            <tr>
+                <td style="font-size: 20px ">Room Type</td>
+                <td style="font-size: 20px ">Amount</td>
+            </tr>
+            <tr><td>({{ room }})</td>
+            <td>{{ charge }}</td></tr>
+            <tr><td style="font-size: 20px">Ammenities </td></tr>
+            <td>
+            ({% for x in amm %}{% if x  == "1000" %} Computer, {% endif %}{% endfor %}
+            {% for x in amm %}{% if x  == "850" %} Gym, {% endif %}{% endfor %}
+            {% for x in amm %}{% if x  == "50" %} Water {% endif %}{% endfor %})</td>
+            <td>{{ chrg }}</td></tr>
+            <tr><th colspan="6"><hr></th></tr>
+            <tr><td style="font-size: 20px">Payable Amount:<br></td>
+            <td>{{ total }}</td></tr>
+            <tr><th colspan="6"><hr></th></tr>
+            <tr><th colspan="3"><button type="submit">Confirm</button></th></tr>
+        </table>
+
+    </body>
+</html>
