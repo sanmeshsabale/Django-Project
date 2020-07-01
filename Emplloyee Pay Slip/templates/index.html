@@ -1,0 +1,20 @@
+<html>
+<h1 align="center">Online Pay Slip</h1>
+    <body>
+        <form action="{% url 'save' %}" method="post">
+            {% csrf_token %}
+        <table align="center" border="0">
+            <tr><th>Empolyee NO<input type="number" required min="1001" name="eno"></th></tr>
+            <tr><th>Employee Name<input type="text" required name="ena"></th></tr><br><br>
+            <tr><th>Basic Salary<input type="number" required step="any" name="esal"></th></tr><br><br>
+            <tr><th><button type="submit">Display</button> </th></tr>
+        </table>
+        </form>
+        {% if da %}
+        <h1 align="center">Salary Slip</h1>
+        <h3 align="center">DA:{{ da }}</h3>
+        <h3 align="center">HRA:{{ hra }}</h3>
+        <h3 align="center">TOTAL SALARY:{{ total }}</h3>
+        {% endif %}
+    </body>
+</html>
